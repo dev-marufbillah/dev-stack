@@ -88,7 +88,7 @@ const Technologies = () => {
               return (
                 <div
                   key={tech.id}
-                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] hover:shadow-[0_8px_20px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col h-full"
+                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] hover:shadow-[0_8px_20px_-6px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="flex justify-between items-start mb-5">
                     <img src={tech.icon} alt={tech.name} className="w-9 h-9 object-contain" />
