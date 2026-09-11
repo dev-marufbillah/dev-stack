@@ -6,20 +6,18 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans tracking-wide overflow-x-hidden">
-      
-      {/* 1. Header / Navbar */}
+    <div className="min-h-screen bg-white text-gray-900">
+      {/* Fixed Navbar */}
       <Navbar />
 
-      {/* 2. Main Content Area */}
-      <main>
+      {/* Main Content with Top Padding for Fixed Navbar */}
+      <main className="pt-16 md:pt-20">
         <Hero />
         <Technologies />
       </main>
 
-      {/* 3. Footer */}
+      {/* Footer */}
       <Footer />
-
     </div>
   )
 }

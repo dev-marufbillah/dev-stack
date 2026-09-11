@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo-text.png';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,17 +13,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* ========== DESKTOP NAVBAR ========== */}
+        {/* DESKTOP NAVBAR */}
         <div className="hidden md:flex justify-between items-center h-20">
-          {/* Left: Brand Logo (Only Image) */}
-          <div className="flex items-center cursor-pointer">
+          <a href="#home" className="flex items-center">
             <img src={logo} alt="DevStack Logo" className="h-10 w-auto object-contain" />
-          </div>
+          </a>
 
-          {/* Center: Nav Links */}
           <div className="flex space-x-8">
             {navLinks.map((link, index) => (
               <a
@@ -39,7 +38,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right: Buttons */}
           <div className="flex items-center gap-6">
             <button className="text-gray-600 font-medium hover:text-gray-900 transition-colors">
               Sign In
@@ -50,9 +48,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ========== MOBILE NAVBAR ========== */}
+        {/* MOBILE NAVBAR */}
         <div className="flex md:hidden justify-between items-center h-16">
-          {/* Left: Hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
@@ -69,12 +66,10 @@ const Navbar = () => {
             )}
           </button>
 
-          {/* Center: Brand Logo (Only Image) */}
-          <div className="flex items-center cursor-pointer">
+          <a href="#home" className="flex items-center">
             <img src={logo} alt="DevStack Logo" className="h-8 w-auto object-contain" />
-          </div>
+          </a>
 
-          {/* Right: Buttons */}
           <div className="flex items-center gap-2">
             <button className="text-gray-600 text-sm font-medium hover:text-gray-900 transition-colors px-2">
               Sign In
@@ -109,7 +104,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
