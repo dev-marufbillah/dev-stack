@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Technologies from './components/Technologies'
@@ -10,7 +11,7 @@ export default function App() {
       {/* Fixed Navbar */}
       <Navbar />
 
-      {/* Main Content with Top Padding for Fixed Navbar */}
+      {/* Main Content */}
       <main className="pt-16 md:pt-20">
         <Hero />
         <Technologies />
