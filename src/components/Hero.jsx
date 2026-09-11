@@ -26,7 +26,7 @@ const Hero = () => {
               <a
                 href="#technologies"
                 className="inline-flex items-center justify-center px-7 py-3 rounded-full text-white font-semibold text-sm sm:text-base
-                           brand-gradient-bg hover:opacity-90
+                           brand-gradient-bg hover:opacity-90 hover:scale-105
                            shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Explore Technologies
@@ -36,7 +36,7 @@ const Hero = () => {
                 href="#about"
                 className="inline-flex items-center justify-center px-7 py-3 rounded-full font-semibold text-sm sm:text-base
                            text-gray-600 bg-white border border-gray-200
-                           hover:border-gray-300 hover:bg-gray-50
+                           hover:border-gray-300 hover:bg-gray-50 hover:scale-105
                            transition-all duration-300"
               >
                 Learn More
