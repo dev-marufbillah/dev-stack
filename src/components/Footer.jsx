@@ -8,24 +8,39 @@ const Footer = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           
-          {/* Brand Block (Only Logo Image) */}
+          {/* Brand Block */}
           <div className="lg:col-span-2">
-            <div className="flex items-center cursor-pointer mb-4">
+            <a href="#home" className="flex items-center mb-4" aria-label="DevStack Home Logo">
               <img src={logo} alt="DevStack Logo" className="h-10 w-auto object-contain" />
-            </div>
+            </a>
             
             <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
               Curated tools, technologies, and resources for developers building modern software.
             </p>
 
             <div className="flex items-center gap-5 mt-6">
-              <a href="#" className="text-sm font-semibold text-gray-700 hover:text-pink-600 transition-colors">
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm font-semibold text-gray-700 hover:text-pink-600 transition-colors"
+              >
                 GitHub
               </a>
-              <a href="#" className="text-sm font-semibold text-gray-700 hover:text-pink-600 transition-colors">
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm font-semibold text-gray-700 hover:text-pink-600 transition-colors"
+              >
                 Twitter
               </a>
-              <a href="#" className="text-sm font-semibold text-gray-700 hover:text-pink-600 transition-colors">
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm font-semibold text-gray-700 hover:text-pink-600 transition-colors"
+              >
                 LinkedIn
               </a>
             </div>
