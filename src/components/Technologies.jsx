@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const badgeColors = {
   Popular: 'text-blue-500 bg-blue-50',
@@ -40,24 +41,28 @@ const Technologies = () => {
 
   const handleAdd = (tech) => {
     if (stack.find((item) => item.id === tech.id)) {
-      alert(`${tech.name} is already in your stack!`);
+      toast.warn(`${tech.name} is already in your stack!`);
       return;
     }
     setStack([...stack, tech]);
+    toast.success(`${tech.name} added to your stack!`);
   };
 
   const handleRemove = (id) => {
+    const item = stack.find((t) => t.id === id);
     setStack(stack.filter((item) => item.id !== id));
+    if (item) toast.info(`${item.name} removed from stack`);
   };
 
   const handleRemoveAll = () => {
     setStack([]);
+    toast.error('All technologies removed from stack');
   };
 
   if (isLoading) {
     return (
       <section className="py-20 bg-white flex flex-col items-center justify-center min-h-87.5">
-        <div className="w-10 h-10 border-4 border-pink-200 border-t-pink-600 rounded-full animate-spin"></div>
+        <span className="loading loading-spinner loading-lg text-pink-600"></span>
         <p className="mt-4 text-gray-500 font-medium text-sm animate-pulse">
           Loading technologies...
         </p>
@@ -67,7 +72,7 @@ const Technologies = () => {
 
   return (
     <section id="technologies" className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-10 text-center lg:text-left">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -80,7 +85,7 @@ const Technologies = () => {
 
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           
-          <div className="w-full lg:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {techData.map((tech) => {
               const isAdded = stack.some((item) => item.id === tech.id);
               const badgeClass = badgeColors[tech.badge] || 'text-gray-600 bg-gray-100';
@@ -111,9 +116,9 @@ const Technologies = () => {
                   <button
                     onClick={() => handleAdd(tech)}
                     disabled={isAdded}
-                    className={`w-full mt-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                    className={`btn min-h-11 h-11 w-full mt-6 rounded-xl font-semibold text-sm border-none transition-all duration-300 ${
                       isAdded
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        ? 'btn-disabled bg-gray-100 text-gray-400 cursor-not-allowed'
                         : 'bg-[#0f172a] text-white hover:bg-pink-600 shadow-md hover:shadow-lg'
                     }`}
                   >
@@ -124,7 +129,7 @@ const Technologies = () => {
             })}
           </div>
 
-          <div className="w-full lg:w-[25%] lg:sticky lg:top-24 bg-white border border-gray-100 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div className="w-full lg:w-1/4 lg:sticky lg:top-24 bg-white border border-gray-100 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <h3 className="text-xl font-bold text-gray-900">Your Stack</h3>
 
             {stack.length > 0 ? (
@@ -166,7 +171,7 @@ const Technologies = () => {
             {stack.length > 0 && (
               <button
                 onClick={handleRemoveAll}
-                className="w-full mt-6 py-2.5 rounded-xl font-semibold text-sm text-red-500 border border-red-100 hover:bg-red-50 hover:border-red-200 transition-colors"
+                className="btn min-h-11 h-11 w-full mt-6 rounded-xl font-semibold text-sm text-red-500 border border-red-100 bg-white hover:bg-red-50 hover:border-red-200 transition-colors"
               >
                 Remove All
               </button>
