@@ -18,7 +18,7 @@ const Navbar = () => {
         
         {/* DESKTOP NAVBAR */}
         <div className="hidden md:flex justify-between items-center h-20">
-          <a href="#home" className="flex items-center">
+          <a href="#home" className="flex items-center" aria-label="DevStack Home Logo">
             <img src={logo} alt="DevStack Logo" className="h-10 w-auto object-contain" />
           </a>
 
@@ -39,10 +39,10 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <button className="text-gray-600 font-medium hover:text-gray-900 transition-colors">
+            <button className="text-gray-600 font-medium hover:text-gray-900 transition-colors" aria-label="Sign In">
               Sign In
             </button>
-            <button className="brand-gradient-bg hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-sm hover:shadow-md">
+            <button className="brand-gradient-bg hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-sm hover:shadow-md" aria-label="Sign Up">
               Sign Up
             </button>
           </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -66,15 +66,15 @@ const Navbar = () => {
             )}
           </button>
 
-          <a href="#home" className="flex items-center">
+          <a href="#home" className="flex items-center" aria-label="DevStack Home Logo">
             <img src={logo} alt="DevStack Logo" className="h-8 w-auto object-contain" />
           </a>
 
           <div className="flex items-center gap-2">
-            <button className="text-gray-600 text-sm font-medium hover:text-gray-900 transition-colors px-2">
+            <button className="text-gray-600 text-sm font-medium hover:text-gray-900 transition-colors px-2" aria-label="Sign In">
               Sign In
             </button>
-            <button className="brand-gradient-bg hover:opacity-90 text-white text-sm px-4 py-1.5 rounded-full font-medium transition-all shadow-sm">
+            <button className="brand-gradient-bg hover:opacity-90 text-white text-sm px-4 py-1.5 rounded-full font-medium transition-all shadow-sm" aria-label="Sign Up">
               Sign Up
             </button>
           </div>
